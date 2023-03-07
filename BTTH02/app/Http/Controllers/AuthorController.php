@@ -7,9 +7,9 @@ use App\Models\Author;
 
 class AuthorController extends Controller
 {
-    public function showAuthor() {
+    public function Author() {
         $author = Author::get();
-        return view('Author');
+        return view('author.author',compact('author'));
     }
 }
 
