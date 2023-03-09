@@ -4,11 +4,11 @@
 <main class="container mt-5 mb-5">
     <div class="row">
         <div class="col-sm">
-            <a href="add_author.php" class="btn btn-success">Thêm mới</a>
+            <a href="{{url('add-author')}}" class="btn btn-success">Thêm mới</a>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Mã Tác Giả</th>
                         <th scope="col">Tên Tác Giả</th>
                         <th scope="col"></th>
                     </tr>
@@ -16,13 +16,13 @@
                 <tbody>
                     @foreach($author as $item)
                         <tr>
-                            <th scope="row">{{$loop->iteration}}</th>
+                            <th scope="row">{{$item->ma_tgia}}</th>
                             <td>{{$item->ten_tgia}}</td>
                             <td>
                               <a href="" class="btn btn-warning">Edit</a>
-                              <form method="post" action="" style="display: inline">
+                              <form method="POST" action="{{url('delete-author/'.$item->ma_tgia)}}" style="display: inline">
                                 @csrf
-                                <button class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
                               </form>
                               
                             </td>

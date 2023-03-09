@@ -26,16 +26,16 @@
                     <a class="nav-link active fw-bold" aria-current="page" href="./">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Trang ngoài</a>
+                    <a class="nav-link" href="{{url('dashboard')}}">Trang ngoài</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./category/category.php">Thể loại</a>
+                    <a class="nav-link" href="{{url('category')}}">Thể loại</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="author.php">Tác giả</a>
+                    <a class="nav-link" href="{{url('author')}}">Tác giả</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="article.php">Bài viết</a>
+                    <a class="nav-link" href="{{url('article')}}">Bài viết</a>
                 </li>
             </ul>
             </div>
