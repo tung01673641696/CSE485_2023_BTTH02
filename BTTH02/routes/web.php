@@ -19,23 +19,30 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('dashboard', function () {
-    return view('dashboard');
-});
+// Route::get('dashboard', function () {
+//     return view('dashboard');
+// });
 
 Route::get('login', function () {
     return view('login.Login');
 });
 
-Route::post('dashboard', [AdminController::class, 'dashboard']);
+Route::get('dashboard', [AdminController::class, 'dashboard']);
 
 Route::get('author', [AuthorController::class, 'Author']);
 Route::get('add-author', [AuthorController::class, 'addAuthor']);
 Route::post('save-author', [AuthorController::class, 'saveAuthor']);
+
+Route::get('edit-author/{ma_tgia}', [AuthorController::class, 'editAuthor']);
+Route::post('update-author/{ma_tgia}', [AuthorController::class, 'updateAuthor']);
+
 Route::post('delete-author/{ma_tgia}', [AuthorController::class, 'deleteAuthor']);
 
 Route::get('category', [CategoryController::class, 'Category']);
 Route::get('add-category', [CategoryController::class, 'addCategory']);
 Route::post('save-category', [CategoryController::class, 'saveCategory']);
+Route::get('edit-category/{ma_tloai}', [CategoryController::class, 'editCategory']);
 
 Route::get('article', [ArticleController::class, 'Article']);
+Route::get('add-article', [ArticleController::class, 'addArticle']);
+Route::post('save-article', [ArticleController::class, 'saveArticle']);

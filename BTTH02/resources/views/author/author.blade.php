@@ -19,7 +19,7 @@
                             <th scope="row">{{$item->ma_tgia}}</th>
                             <td>{{$item->ten_tgia}}</td>
                             <td>
-                              <a href="" class="btn btn-warning">Edit</a>
+                              <a href="{{url('edit-author/'.$item->ma_tgia)}}" class="btn btn-warning">Edit</a>
                               <form method="POST" action="{{url('delete-author/'.$item->ma_tgia)}}" style="display: inline">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Delete</button>

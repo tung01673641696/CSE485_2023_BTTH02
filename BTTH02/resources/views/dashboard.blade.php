@@ -13,7 +13,7 @@
                     </h5>
 
                     <h5 class="h1 text-center">
-                        
+                        {{$sum['sumUser']}}
                     </h5>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     </h5>
 
                     <h5 class="h1 text-center">
-                        
+                        {{$sum['sumCategory']}}
                     </h5>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     </h5>
 
                     <h5 class="h1 text-center">
-                        
+                        {{$sum['sumAuthor']}}
                     </h5>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     </h5>
 
                     <h5 class="h1 text-center">
-                        
+                        {{$sum['sumArticle']}}
                     </h5>
                 </div>
             </div>

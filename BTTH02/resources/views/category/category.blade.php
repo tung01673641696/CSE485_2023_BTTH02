@@ -19,7 +19,7 @@
                             <th scope="row">{{$item->ma_tloai}}</th>
                             <td>{{$item->ten_tloai}}</td>
                             <td>
-                              <a href="" class="btn btn-warning">Edit</a>
+                              <a href="{{url('edit-category/'.$item->ma_tloai)}}" class="btn btn-warning">Edit</a>
                               <form method="post" action="" style="display: inline">
                                 @csrf
                                 <button class="btn btn-danger">Delete</button>

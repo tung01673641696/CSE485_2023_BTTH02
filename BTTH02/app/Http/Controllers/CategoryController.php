@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use DB;
 
 class CategoryController extends Controller
 {
@@ -22,5 +23,10 @@ class CategoryController extends Controller
         $category -> ten_tloai = $nameCategory;
         $category -> save();
         return redirect('category');
+    }
+
+    public function editCategory($ma_tloai) {
+        $category = Category::where('ma_tloai',$ma_tloai)->first();
+        return view("category.edit_category",compact('category'));
     }
 }

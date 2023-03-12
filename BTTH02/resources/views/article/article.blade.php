@@ -4,7 +4,7 @@
 <main class="container mt-5 mb-5">
     <div class="row">
         <div class="col-sm">
-            <a href="" class="btn btn-success">Thêm mới</a>
+            <a href="{{url('add-article')}}" class="btn btn-success">Thêm mới</a>
             <table class="table">
                 <thead>
                     <tr>
