@@ -45,4 +45,9 @@ class ArticleController extends Controller
         $article->save();
         return redirect('article');
     }
+
+    public function deleteArticle($ma_bviet) {
+        $baiviet = Article::where('ma_bviet',$ma_bviet)->delete();
+        return redirect('article');
+    }
 }

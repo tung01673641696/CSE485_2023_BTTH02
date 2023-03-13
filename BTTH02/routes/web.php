@@ -42,7 +42,9 @@ Route::get('category', [CategoryController::class, 'Category']);
 Route::get('add-category', [CategoryController::class, 'addCategory']);
 Route::post('save-category', [CategoryController::class, 'saveCategory']);
 Route::get('edit-category/{ma_tloai}', [CategoryController::class, 'editCategory']);
+Route::post('delete-category/{ma_tloai}', [CategoryController::class, 'deleteCategory']);
 
 Route::get('article', [ArticleController::class, 'Article']);
 Route::get('add-article', [ArticleController::class, 'addArticle']);
 Route::post('save-article', [ArticleController::class, 'saveArticle']);
+Route::post('delete-article/{ma_bviet}', [ArticleController::class, 'deleteArticle']);

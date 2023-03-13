@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Article;
 use DB;
 
 class CategoryController extends Controller
@@ -28,5 +29,11 @@ class CategoryController extends Controller
     public function editCategory($ma_tloai) {
         $category = Category::where('ma_tloai',$ma_tloai)->first();
         return view("category.edit_category",compact('category'));
+    }
+
+    public function deleteCategory($ma_tloai) {
+        $article = Article::where('ma_tloai', $ma_tloai)->delete();
+        $category = Category::where('ma_tloai', $ma_tloai)->delete();
+        return redirect('category');
     }
 }

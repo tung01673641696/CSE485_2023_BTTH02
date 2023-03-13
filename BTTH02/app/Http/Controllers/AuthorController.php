@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Author;
+use App\Models\Article;
 use Illuminate\Support\Facades\Log;
 use DB;
 
@@ -34,17 +35,16 @@ class AuthorController extends Controller
     }
 
     public function updateAuthor(Request $request, $ma_tgia) {
-        $author = Author::where('ma_tgia', $ma_tgia)->first();
         $nameAuthor = $request-> nameAuthor;
-        $author->ten_tgia = $nameAuthor;
-        $author -> save();
-        return redirect('author.author');
+        $author = DB::table('tacgia')->where('ma_tgia',$ma_tgia)->update(['ten_tgia',$nameAuthor]);
+        return redirect('author');
     }
 
-    public function deleteAuthor($ma_tgia) {
-        $author = Author::where('ma_tgia', $ma_tgia)->first();
-        $author->delete();
-        return redirect('author.author');   
+    public function deleteAuthor($ma_tgia) {      
+        $article = Article::where('ma_tgia', $ma_tgia)->delete();
+        $author = Author::where('ma_tgia', $ma_tgia)->delete();
+        
+        return redirect('author');
     }
 }
 

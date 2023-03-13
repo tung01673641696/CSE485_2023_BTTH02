@@ -20,7 +20,7 @@
                             <td>{{$item->ten_tloai}}</td>
                             <td>
                               <a href="{{url('edit-category/'.$item->ma_tloai)}}" class="btn btn-warning">Edit</a>
-                              <form method="post" action="" style="display: inline">
+                              <form method="post" action="{{url('delete-category/'.$item->ma_tloai)}}" style="display: inline">
                                 @csrf
                                 <button class="btn btn-danger">Delete</button>
                               </form>
