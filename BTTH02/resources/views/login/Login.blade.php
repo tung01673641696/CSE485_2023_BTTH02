@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="card-body">
-            <form action="{{url('dashboard')}}" method="POST">
+            <form action="{{url('login-store')}}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="txtUser"><i class="fas fa-user"></i></span>

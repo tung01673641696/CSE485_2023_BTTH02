@@ -28,7 +28,7 @@ class AuthorController extends Controller
 
     public function editAuthor($ma_tgia) {
         // Log::info($ma_tgia);
-        $author = Author::where('ma_tgia', $ma_tgia)->first();
+        $author = Author::where('ma_tgia',$ma_tgia)->first();
         // $author = Author::find($ma_tgia);
         return view('author.edit_author', compact('author'));
     }
@@ -43,8 +43,7 @@ class AuthorController extends Controller
 
     public function deleteAuthor($ma_tgia) {
         $author = Author::where('ma_tgia', $ma_tgia)->first();
-        Log::info($author);
-        $author -> delete();
+        $author->delete();
         return redirect('author.author');   
     }
 }

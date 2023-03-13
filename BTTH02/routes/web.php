@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +24,10 @@ Route::get('/', function () {
 //     return view('dashboard');
 // });
 
-Route::get('login', function () {
-    return view('login.Login');
-});
-
 Route::get('dashboard', [AdminController::class, 'dashboard']);
+
+Route::get('login', [LoginController::class, 'login']);
+Route::post('login-store', [LoginController::class, 'loginStore']);
 
 Route::get('author', [AuthorController::class, 'Author']);
 Route::get('add-author', [AuthorController::class, 'addAuthor']);
