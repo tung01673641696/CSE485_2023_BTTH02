@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,7 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'home']);
 
 // Route::get('dashboard', function () {
 //     return view('dashboard');
@@ -42,9 +41,12 @@ Route::get('category', [CategoryController::class, 'Category']);
 Route::get('add-category', [CategoryController::class, 'addCategory']);
 Route::post('save-category', [CategoryController::class, 'saveCategory']);
 Route::get('edit-category/{ma_tloai}', [CategoryController::class, 'editCategory']);
+Route::post('update-category/{ma_tloai}', [CategoryController::class, 'updateCategory']);
 Route::post('delete-category/{ma_tloai}', [CategoryController::class, 'deleteCategory']);
 
 Route::get('article', [ArticleController::class, 'Article']);
 Route::get('add-article', [ArticleController::class, 'addArticle']);
 Route::post('save-article', [ArticleController::class, 'saveArticle']);
+Route::get('edit-article/{ma_bviet}', [ArticleController::class, 'editArticle']);
+Route::post('update-article/{ma_bviet}', [ArticleController::class, 'updateArticle']);
 Route::post('delete-article/{ma_bviet}', [ArticleController::class, 'deleteArticle']);

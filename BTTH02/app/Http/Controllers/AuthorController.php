@@ -35,8 +35,12 @@ class AuthorController extends Controller
     }
 
     public function updateAuthor(Request $request, $ma_tgia) {
+       
         $nameAuthor = $request-> nameAuthor;
-        $author = DB::table('tacgia')->where('ma_tgia',$ma_tgia)->update(['ten_tgia',$nameAuthor]);
+       
+        $author = DB::table('tacgia')
+        ->where('ma_tgia',$ma_tgia)->update(['ten_tgia' => $nameAuthor]);
+        // ->update('ten_tgia',$nameAuthor);
         return redirect('author');
     }
 

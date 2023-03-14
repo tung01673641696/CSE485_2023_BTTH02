@@ -33,17 +33,18 @@
     <h3 class="text-center text-uppercase mb-3 mt-3 text-primary">TOP bài hát yêu thích</h3>
     <div class="row" style= "margin: 50px 100px">
 
-       
+        @foreach($show as $item)
             <div class="col-sm-3" style= "margin-bottom: 30px">
                 <div class="card mb-2" style="width: 100%;">
-                    <img src="" class="card-img-top" alt="...">
+                    <img src="{{url('images/songs/'.$item->hinhanh)}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">
-                            <a href="" class="text-decoration-none"></a>
+                            <a href="" class="text-decoration-none">{{$item->ten_bhat}}</a>
                         </h5>
                     </div>
                 </div>
             </div>
+        @endforeach
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </main>

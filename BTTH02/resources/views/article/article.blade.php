@@ -25,7 +25,7 @@
                             <td>{{$item->ten_bhat}}</td>
                             <td>{{$item->ten_bviet}}</td>
                             <td>
-                              <a href="" class="btn btn-warning">Edit</a>
+                              <a href="{{url('edit-article/'.$item->ma_bviet)}}" class="btn btn-warning">Edit</a>
                               <form method="post" action="{{url('delete-article/'.$item->ma_bviet)}}" style="display: inline">
                                 @csrf
                                 <button class="btn btn-danger">Delete</button>

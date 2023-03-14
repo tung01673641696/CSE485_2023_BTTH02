@@ -8,7 +8,7 @@
         <div class="col-sm">
             <h3 class="text-center text-uppercase fw-bold">Chỉnh sửa Thể loại</h3>
 
-            <form action="" method="post">
+            <form action="{{url('update-category/'.$category->ma_tloai)}}" method="post">
                 @csrf
                 <div class="input-group mt-3 mb-3">
                     <span class="input-group-text" id="lblCatName">Tên thể loại</span>

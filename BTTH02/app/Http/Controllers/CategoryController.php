@@ -31,6 +31,16 @@ class CategoryController extends Controller
         return view("category.edit_category",compact('category'));
     }
 
+    public function updateCategory(Request $request, $ma_tloai) {
+       
+        $nameCategory = $request-> nameCategory;
+       
+        $category = DB::table('theloai')
+        ->where('ma_tloai',$ma_tloai)->update(['ten_tloai' => $nameCategory]);
+        // ->update('ten_tgia',$nameAuthor);
+        return redirect('category');
+    }
+
     public function deleteCategory($ma_tloai) {
         $article = Article::where('ma_tloai', $ma_tloai)->delete();
         $category = Category::where('ma_tloai', $ma_tloai)->delete();
